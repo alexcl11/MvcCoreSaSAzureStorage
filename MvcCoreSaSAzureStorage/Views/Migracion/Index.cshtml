@@ -1,0 +1,36 @@
+﻿@model List<Alumno>
+<h1>
+    Migración de alumnos a Azure Tables
+</h1>
+<hr />
+<form method="post">
+    <button class="btn btn-success" name="accion" value="accion">Comenzar</button>
+</form>
+
+<hr />
+<h3>@ViewData["MENSAJE"]</h3>
+
+@if(Model != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <th>ID Alumno</th>
+            <th>Curso</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Nota</th>
+        </thead>
+        <tbody>
+            @foreach(Alumno alumno in Model)
+            {
+                <tr>
+                    <td>@alumno.IdAlumno</td>
+                    <td>@alumno.Curso</td>
+                    <td>@alumno.Nombre</td>
+                    <td>@alumno.Apellidos</td>
+                    <td>@alumno.Nota</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
